@@ -26,5 +26,8 @@ COPY dist/spa-angular /var/www/html/angular
 
 EXPOSE 80
 
-CMD php-fpm -D && nginx -g 'daemon off;'
+CMD ["/sbin/init"]
+
+# Nginx と php-fpm を起動（テスト環境はこれを使う）
+# CMD php-fpm -D && nginx -g 'daemon off;'
 
